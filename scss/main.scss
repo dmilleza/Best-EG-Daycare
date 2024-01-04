@@ -15,6 +15,7 @@ body {
 
 a {
   text-decoration: none;
+  color: $light-color;
 }
 
 img {
@@ -55,7 +56,6 @@ header {
         border-bottom: 3px transparent solid;
         padding-bottom: 0.5rem;
         transition: all 0.5s;
-        color: $light-color;
 
         &:hover {
           border-color: $medium-color;
@@ -162,6 +162,85 @@ header {
       img {
         width: 500px;
         height: 400px;
+      }
+    }
+  }
+}
+
+#about {
+  &-a {
+    .container {
+      h1 {
+        font-size: 3rem;
+      }
+
+      div {
+        display: flex;
+        column-gap: 3rem;
+
+        .left {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          img {
+            border-radius: 50%;
+          }
+
+          h2 {
+            font-size: 2rem;
+          }
+        }
+        .right {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  &-b {
+    a {
+      font-size: 1.5rem;
+      border-radius: 5px;
+    }
+  }
+
+  &-c {
+    margin-bottom: 9rem;
+    .container {
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+
+        .card {
+          background: $medium-color;
+          border-radius: 20px;
+
+          .review {
+            background: $light-color;
+            min-height: 200px;
+            border-radius: 20px;
+            padding: 1rem;
+            font-weight: bold;
+          }
+
+          .client {
+            align-items: center;
+            column-gap: 0.8rem;
+            display: flex;
+            margin: 0.8rem 0 0.8rem 1rem;
+
+            p {
+              font-size: 2.2rem;
+            }
+          }
+        }
       }
     }
   }
