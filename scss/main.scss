@@ -246,6 +246,21 @@ header {
   }
 }
 
+#photos {
+  .container {
+    display: flex;
+    column-gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .photo {
+    flex: 23%;
+    max-width: 23%;
+
+  }
+}
+
 footer {
   background: $dark-color;
   color: $light-color;
