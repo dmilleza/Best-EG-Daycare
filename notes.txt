@@ -2,8 +2,12 @@ navbar: logo home about photos
 
 about page: info, picture, years experience, testimonials
 
-home page: hero, basics: ages hours days payschedules, license number,
+home page: hero, basics: ages hours days license number, 
 
 photos page
 
 footer: copyright, contact(leads to email prompt), pricing(leads to booking site)
+
+quality, affordable child care
+
+welcome to our family
