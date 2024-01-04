@@ -228,6 +228,16 @@ header {
         #about-c .container .testimonials .card .client p {
           font-size: 2.2rem; }
 
+#photos .container {
+  display: flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap; }
+
+#photos .photo {
+  flex: 23%;
+  max-width: 23%; }
+
 footer {
   background: #333;
   color: #f4f4f4;
