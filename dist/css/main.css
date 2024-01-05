@@ -128,21 +128,24 @@ header {
           border-color: #f4f4f4; }
 
 #home-a .container {
-  display: flex;
-  column-gap: 5rem; }
-  #home-a .container img {
-    width: 600px;
-    height: 400px; }
+  display: grid;
+  grid-template-areas: 'bioimage bio';
+  grid-gap: 3rem; }
   #home-a .container div {
+    grid-area: bio;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    min-width: 488px; }
     #home-a .container div h1 {
       font-size: 4rem;
       margin-bottom: 2rem; }
     #home-a .container div h4 {
       font-size: 2rem; }
+  #home-a .container .img1 {
+    grid-area: bioimage;
+    align-self: center; }
 
 #home-b .stats {
   display: grid;
@@ -166,20 +169,22 @@ header {
   border-radius: 5px; }
 
 #home-d .container {
-  display: flex;
-  column-gap: 5rem; }
-  #home-d .container .health h3 {
-    font-size: 3rem;
-    text-align: center; }
-  #home-d .container .health ul {
-    margin-top: 2rem;
-    list-style-type: disc;
-    font-size: 1.5rem; }
-    #home-d .container .health ul li {
-      margin: 1rem; }
+  display: grid;
+  grid-template-areas: 'health pic'; }
+  #home-d .container .health {
+    grid-area: health; }
+    #home-d .container .health h3 {
+      font-size: 3rem;
+      text-align: center; }
+    #home-d .container .health ul {
+      margin-top: 2rem;
+      list-style-type: disc;
+      font-size: 1.5rem; }
+      #home-d .container .health ul li {
+        margin: 1rem; }
   #home-d .container img {
-    width: 500px;
-    height: 400px; }
+    grid-area: pic;
+    align-self: center; }
 
 #about-a .container h1 {
   font-size: 3rem; }
@@ -205,7 +210,8 @@ header {
 #about-c {
   margin-bottom: 9rem; }
   #about-c .container h2 {
-    font-size: 2rem;
+    font-size: 2rem; }
+  #about-c .container .bottom-line {
     margin-bottom: 3rem; }
   #about-c .container .testimonials {
     display: grid;
@@ -224,19 +230,17 @@ header {
         align-items: center;
         column-gap: 0.8rem;
         display: flex;
-        margin: 0.8rem 0 0.8rem 1rem; }
-        #about-c .container .testimonials .card .client p {
-          font-size: 2.2rem; }
+        margin: 0.8rem 0 0.8rem 1rem;
+        font-size: 2.2rem; }
 
 #photos .container {
-  display: flex;
-  column-gap: 10px;
-  row-gap: 10px;
-  flex-wrap: wrap; }
-
-#photos .photo {
-  flex: 23%;
-  max-width: 23%; }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  min-height: 600px; }
+  #photos .container .photo {
+    padding: 0 4px; }
 
 footer {
   background: #333;
@@ -251,3 +255,77 @@ footer {
     transition: all 0.2s; }
     footer .list a:hover {
       color: #ccc; }
+
+@media (max-width: 1220px) {
+  #home-a .container {
+    grid-template-areas: 'bioimage bio bio';
+    grid-gap: 1rem; }
+    #home-a .container div h1 {
+      font-size: 3rem; }
+  #about-c .container .testimonials .card .client {
+    font-size: 1.5rem;
+    column-gap: 0.5rem; } }
+
+@media (max-width: 850px) {
+  #home-a .container {
+    grid-template-areas: 'bioimage' 'bio'; }
+  #home-b .stats {
+    grid-template-columns: repeat(2, 1fr); }
+    #home-b .stats div:nth-child(3) {
+      background: #ccc; }
+    #home-b .stats div:nth-child(4) {
+      background: #f4f4f4; }
+  #home-d .container {
+    grid-template-areas: 'pic' 'health'; }
+  #about-a .container div {
+    flex-direction: column; }
+    #about-a .container div .left {
+      margin-bottom: 2rem; }
+  #about-c .container .testimonials {
+    grid-template-columns: repeat(2, 1fr); }
+    #about-c .container .testimonials .card .review {
+      min-height: 150px; }
+  #photos .container {
+    grid-template-columns: repeat(3, 1fr); }
+  footer {
+    font-size: 1.1rem; }
+    footer .list a {
+      margin: 0 1rem; } }
+
+@media (max-width: 550px) {
+  header nav {
+    flex-direction: column; }
+    header nav .logo {
+      margin-bottom: 1rem; }
+    header nav ul {
+      align-self: center; }
+  #home-a {
+    padding: 2rem 0; }
+    #home-a .container {
+      padding: 0; }
+      #home-a .container div {
+        min-width: 0; }
+        #home-a .container div h1 {
+          font-size: 2.5rem; }
+        #home-a .container div h4 {
+          font-size: 1.5rem; }
+  #home-d .container {
+    padding: 0; }
+    #home-d .container .health {
+      padding: 0 1rem; }
+      #home-d .container .health h3 {
+        font-size: 2.5rem; }
+  #home-d img {
+    margin-bottom: 1rem; }
+  #about-a .container h1 {
+    font-size: 2.5rem; }
+  #photos .container {
+    grid-template-columns: 1fr; }
+  footer .container {
+    flex-direction: column;
+    text-align: center; }
+    footer .container p {
+      margin-bottom: 1.5rem; }
+    footer .container .list > a {
+      display: block;
+      margin-bottom: 1rem; } }

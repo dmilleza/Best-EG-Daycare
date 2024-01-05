@@ -1,6 +1,5 @@
 @import 'config';
 @import 'utilities';
-@import 'media';
 
 * {
   margin: 0;
@@ -73,19 +72,17 @@ header {
 #home {
   &-a {
     .container {
-      display: flex;
-      column-gap: 5rem;
-
-      img {
-        width: 600px;
-        height: 400px;
-      }
+      display: grid;
+      grid-template-areas: 'bioimage bio';
+      grid-gap: 3rem;
 
       div {
+        grid-area: bio;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-width: 488px;
 
         h1 {
           font-size: 4rem;
@@ -95,6 +92,11 @@ header {
         h4 {
           font-size: 2rem;
         }
+      }
+
+      .img1 {
+        grid-area: bioimage;
+        align-self: center;
       }
     }
   }
@@ -140,10 +142,12 @@ header {
 
   &-d {
     .container {
-      display: flex;
-      column-gap: 5rem;
+      display: grid;
+      grid-template-areas: 'health pic';
 
       .health {
+        grid-area: health;
+
         h3 {
           font-size: 3rem;
           text-align: center;
@@ -159,9 +163,10 @@ header {
           }
         }
       }
+
       img {
-        width: 500px;
-        height: 400px;
+        grid-area: pic;
+        align-self: center;
       }
     }
   }
@@ -207,9 +212,13 @@ header {
 
   &-c {
     margin-bottom: 9rem;
+
     .container {
       h2 {
         font-size: 2rem;
+      }
+
+      .bottom-line {
         margin-bottom: 3rem;
       }
 
@@ -235,10 +244,7 @@ header {
             column-gap: 0.8rem;
             display: flex;
             margin: 0.8rem 0 0.8rem 1rem;
-
-            p {
-              font-size: 2.2rem;
-            }
+            font-size: 2.2rem;
           }
         }
       }
@@ -248,16 +254,16 @@ header {
 
 #photos {
   .container {
-    display: flex;
-    column-gap: 10px;
-    row-gap: 10px;
-    flex-wrap: wrap;
-  }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-  .photo {
-    flex: 23%;
-    max-width: 23%;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
 
+    .photo {
+      padding: 0 4px;
+    }
   }
 }
 
@@ -283,3 +289,5 @@ footer {
     }
   }
 }
+
+@import 'media';

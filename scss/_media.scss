@@ -1,0 +1,193 @@
+@media (max-width: 1220px) {
+  #home {
+    &-a {
+      .container {
+        grid-template-areas: 'bioimage bio bio';
+        grid-gap: 1rem;
+
+        div {
+          h1 {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    &-c {
+      .container {
+        .testimonials {
+          .card {
+            .client {
+              font-size: 1.5rem;
+              column-gap: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  #home {
+    &-a {
+      .container {
+        grid-template-areas: 'bioimage' 'bio';
+      }
+    }
+
+    &-b {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+
+        div {
+          &:nth-child(3) {
+            background: $medium-color;
+          }
+          
+          &:nth-child(4) {
+            background: $light-color;
+          }
+        }
+      }
+    }
+
+    &-d {
+      .container {
+        grid-template-areas: 'pic' 'health';
+      }
+    }
+  }
+
+  #about {
+    &-a {
+      .container {
+        div {
+          flex-direction: column;
+
+          .left {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+
+    &-c {
+      .container {
+        .testimonials {
+          grid-template-columns: repeat(2, 1fr);
+
+          .card {
+            .review {
+              min-height: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #photos {
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  footer {
+    font-size: 1.1rem;
+
+    .list {
+      a {
+        margin: 0 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    nav {
+      flex-direction: column;
+
+      .logo {
+        margin-bottom: 1rem;
+      }
+      ul {
+        align-self: center;
+      }
+    }
+  }
+
+  #home {
+    &-a {
+      padding: 2rem 0;
+
+      .container {
+        padding: 0;
+
+        div {
+          min-width: 0;
+
+          h1 {
+            font-size: 2.5rem;
+          }
+
+          h4 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &-d {
+      .container {
+        padding: 0;
+
+        .health {
+          padding: 0 1rem;
+
+          h3 {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  #about {
+    &-a {
+      .container {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  #photos {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  footer {
+    .container {
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      .list > a {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
